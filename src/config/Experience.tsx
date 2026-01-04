@@ -1,6 +1,5 @@
 import AWS from '@/components/technologies/AWS';
 import BootStrap from '@/components/technologies/BootStrap';
-import Bun from '@/components/technologies/Bun';
 import CSS from '@/components/technologies/CSS';
 import ExpressJs from '@/components/technologies/ExpressJs';
 import Figma from '@/components/technologies/Figma';
@@ -12,7 +11,6 @@ import NextJs from '@/components/technologies/NextJs';
 import NodeJs from '@/components/technologies/NodeJs';
 import PostgreSQL from '@/components/technologies/PostgreSQL';
 import Postman from '@/components/technologies/Postman';
-import Prisma from '@/components/technologies/Prisma';
 import ReactIcon from '@/components/technologies/ReactIcon';
 import TailwindCss from '@/components/technologies/TailwindCss';
 import TypeScript from '@/components/technologies/TypeScript';
