@@ -1,0 +1,195 @@
+---
+title: 'Tweet Generator Chrome Extension with Gemini AI'
+description: 'How I built a Chrome extension that generates engaging tweets from selected webpage text using Google Gemini AI.'
+image: '/project/notesbuddy.png'
+technologies:
+  [
+    'TypeScript',
+    'React',
+    'Tailwind CSS',
+    'Gemini AI',
+  ]
+github: 'https://github.com/tharun099/tweet-generator-chrome-extension'
+timeline: '1 months'
+role: 'Full Stack'
+team: 'Solo'
+status: 'completed'
+featured: true
+challenges:
+  [
+    'Popup ↔ content script communication',
+    'Reliable text selection on dynamic pages',
+    'AI prompt tuning for concise output',
+    'Securing keys under CSP constraints',
+  ]
+learnings:
+  [
+    'Chrome extension architecture',
+    'Practical AI prompt engineering',
+    'Type-safe state and API handling',
+    'Extension performance optimization',
+  ]
+isPublished: true
+---
+
+## Overview
+
+The **Tweet Generator Chrome Extension** allows users to select text on any webpage and instantly generate well-crafted tweets while preserving the original context.
+
+Users can:
+- Customize the **tone** of the tweet  
+- Control the **tweet length**  
+- Regenerate tweets for variations  
+- Copy tweets with a single click  
+- Track real-time character counts  
+
+All of this happens inside a clean and intuitive Chrome extension popup—no tab switching required.
+
+---
+
+## Key Features
+
+- **Text Selection Anywhere**  
+  Select content from any webpage and send it directly to the extension.
+
+- **AI-Powered Tweet Generation**  
+  Uses Google’s Gemini AI to generate concise and engaging tweets.
+
+- **Custom Writing Tones**  
+  Switch between tones to match your audience or intent.
+
+- **Flexible Tweet Lengths**  
+  Generate short, medium, or long tweets.
+
+- **Regenerate & Iterate**  
+  Instantly generate alternative tweet versions.
+
+- **Copy to Clipboard**  
+  One-click copy for quick sharing.
+
+- **Live Character Counter**  
+  Ensures tweets stay within platform limits.
+
+---
+
+## File Structure & Purpose
+
+### `manifest.json`
+- Chrome extension configuration file  
+- Defines permissions, content scripts, and metadata  
+- Registers the popup interface  
+
+---
+
+### `src/components/TweetGenerator.tsx`
+- Main UI component for tweet generation  
+- Manages:
+  - Selected text
+  - Tweet options (tone and length)
+  - Generated output  
+- Handles API calls and user interactions  
+- Renders controls and tweet preview  
+
+---
+
+### `src/lib/gemini.ts`
+- Integrates **Google Gemini AI**  
+- Formats prompts for tweet generation  
+- Processes AI responses  
+- Handles API errors gracefully  
+
+---
+
+### `src/content.tsx`
+- Content script injected into web pages  
+- Detects text selection events  
+- Communicates selected text to the extension  
+- Uses `chrome.storage` for persistence  
+
+---
+
+### `src/types.ts`
+- Centralized TypeScript definitions  
+- Defines interfaces for:
+  - Tweet options
+  - API responses  
+- Stores constants for tone and length options  
+
+---
+
+### `src/App.tsx`
+- Root component of the extension  
+- Provides layout and structure  
+- Handles component organization  
+
+---
+
+### `vite.config.ts`
+- Build configuration using Vite  
+- Optimizes assets for production  
+- Supports fast development and extension packaging  
+
+---
+
+## 🛠 Development Process
+
+### 1. Initial Setup
+- Created a **Vite + React + TypeScript** project  
+- Configured the Chrome extension manifest  
+- Set up the build pipeline for extension packaging  
+
+---
+
+### 2. Core Functionality
+- Implemented text selection detection on web pages  
+- Integrated Gemini AI for tweet generation  
+- Added tone and length customization  
+
+---
+
+### 3. UI Development
+- Designed a clean and intuitive interface  
+- Built responsive components with Tailwind CSS  
+- Added loading states and error handling  
+- Created a Twitter-like tweet preview  
+
+---
+
+### 4. Extension Integration
+- Enabled communication between content scripts and the popup  
+- Implemented data persistence with `chrome.storage`  
+- Ensured seamless cross-script messaging  
+
+---
+
+### 5. Polish & Optimization
+- Added copy and regenerate functionality  
+- Improved user feedback and error messaging  
+- Optimized performance and bundle size  
+
+
+---
+
+## Security Considerations
+
+- API key stored securely using environment variables  
+- Enforced content security policies  
+- Safe handling of user-selected text  
+- Proper validation and error handling  
+
+---
+
+## Future Improvements
+
+1. Tweet scheduling  
+2. Thread generation support  
+3. Multi-platform social sharing  
+4. Advanced customization options  
+
+---
+
+## Final Thoughts
+
+This project was a great opportunity to explore **AI-assisted content creation within a Chrome extension**. It combines modern frontend tooling with browser APIs and generative AI to deliver a productivity-focused experience.
+
+If you’re interested in Chrome extension development or AI-powered UX, this project demonstrates how both can work together seamlessly.

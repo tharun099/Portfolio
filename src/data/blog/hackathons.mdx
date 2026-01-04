@@ -1,0 +1,95 @@
+---
+title: 'Crushing Hackathons: A System-First Approach to Rapid Building'
+description: 'How to use JavaScript foundations, Next.js routing, and purposeful design to build winning projects under pressure.'
+image: '/blog/Hackathon.png'
+tags: ['hackathon', 'nextjs', 'development-systems', 'productivity']
+date: '2026-01-03'
+isPublished: true
+---
+
+
+# Crushing Hackathons: Systems Over Motivation
+
+In a hackathon, you don't have time to wait for inspiration. As the sources suggest, **"Motivation is fleeting; systems are permanent"**. To win, you need to rely on a framework that prioritizes functional code over abstract perfection.
+
+## 1. The Pre-Build: Needs Over Design
+
+The biggest mistake developers make is opening VS Code and staring at a blank screen wondering about colors. Before you write a single line of `npm create-next-app`, follow **Rule 1: Needs over Design**.
+
+- **Identify the Core Problem:** What is the main problem the project solves?
+- **Define the Target Audience:** Who is using this?
+- **Functional First:** Don't worry about typefaces or animations yet. Focus on creating a functional and usable product.
+
+**Tip:** Use the **Grayscale Method**. Design your UI in black and white first to force a focus on hierarchy, padding, and margins.
+
+## 2. Rapid Development with JavaScript Foundations
+
+Hackathons require speed. Leveraging modern JavaScript allows you to write cleaner, more reusable code.
+
+### Reusable Logic
+Use **Arrow Functions** for short, simple operations and **Destructuring** to keep your data handling clean.
+
+```javascript
+// Quick data extraction for a hackathon demo
+const handleUser = ({ name, role = "participant" }) => {
+  return `Welcome ${name}, Role: ${role}`;
+};
+```
+
+### Dynamic Content
+Use **Template Literals** for easy string formatting when displaying dynamic data or notifications.
+
+## 3. Architecture for Speed: Next.js Routing
+
+In a hackathon, your folder structure is your roadmap. Next.js **App Router** allows you to scale your project quickly.
+
+- **Dynamic Routes:** Use `[productId]` folders to handle multiple items without creating individual pages.
+- **Catch-All Segments:** Use `[...slug]` if you need to handle unknown nested paths for documentation or multi-level features.
+
+```sh
+src/app/
+  dashboard/
+    [userId]/
+      page.tsx  # Instantly generates user profiles
+```
+
+## 4. Don't Sacrifice Security for Speed
+
+Even in a 24-hour sprint, a security leak can disqualify your project. Avoid the common mistake of verifying sessions only at the page level.
+
+**The Hackathon-Safe Pattern:**
+Implement a **Data Access Layer**. Centralize your data requests and authorization logic so you don't accidentally leak data when reusing components.
+
+```typescript
+// app/data/todo/get-todos.ts
+import 'server-only'; 
+import { requireUser } from '../user/require-user';
+
+export async function getTodos() {
+  await requireUser(); // Security check inside the data layer
+  return await prisma.todo.findMany();
+}
+```
+
+## 5. Managing the Chaos
+
+Managing a 24-48 hour workload requires an **"External Brain"**. 
+
+- **Use a System:** Use tools like **TickTick** or Kanban boards to track tasks, set reminders, and avoid missing deadlines.
+- **Dopamine Management:** Avoid the trap of "easy dopamine" like scrolling social media during breaks. **"If you can control your dopamine, you can control everything"**.
+- **Build in Public:** Share your progress on X (formerly Twitter) or LinkedIn. Public accountability forces consistency and can attract interest before the final pitch.
+
+## Conclusion
+
+The best way to learn and win is by **"Building the real thing as early as possible"**. Don't get stuck in abstract planning. Code, hit an error, find the reason, learn the new topic, and repeat.
+
+> "If it was easy, anyone could have done it." — Tharun
+
+---
+
+**Analogy for Hackathon Success:**
+A hackathon is like a **timed obstacle course**. Most people fail because they stop to polish their shoes (designing too much). The winner is the one who has a pre-planned route (systems), wears the right gear (JS/Next.js basics), and keeps their eyes on the finish line (user needs).
+
+---
+
+**Note on Information:** While the strategies for development, design, and productivity are directly supported by the sources, their specific application as a "Hackathon Guide" is an original synthesis of those materials. You may wish to independently verify hackathon-specific rules for any competition you enter.
