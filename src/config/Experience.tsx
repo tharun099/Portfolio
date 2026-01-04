@@ -51,7 +51,7 @@ export const experiences: Experience[] = [
     company: 'Vividminds',
     position: 'Associate Software Engineer',
     location: 'Hyderabad, India (On-Site)',
-    image: '/company/vividminds.jfif',
+    image: '/company/vividminds.png',
     description: [
       'Implemented LangChain-based document processing, chunking and embedding uploaded files into a vector database to enable chatbot Q&A grounded in user documents.',
       'Built a scalable file management system with AWS S3, allowing users to upload, manage, and retrieve 100s of images per account securely.',
